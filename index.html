@@ -37,8 +37,24 @@
         <div id="greeting"><marquee><strong>あけましておめでとうございます。</strong></marquee></div>
         <h2>今年もどうぞよろしくお願いします。</h2>
         <h3>この年賀状はhtmlによって書かれています。</h3>
-            <h4><marquee>(・ω・)　　　　　　(ω・　)　　　　　　 (・　　) 　　　　　　(　　　) 　　　　　　( 　　・)　　　　　　(　・ω)　　　　　　(・ω・)</marquee></h4>
-        </div>
+        <div id="changingText">(・  ) </div>
+            <script>
+  // ループするテキストをかこう
+  var textArray = ["テキスト1", "テキスト2", "テキスト3", "テキスト4", "テキスト5", "テキスト6", "テキスト7"];
+  
+  var loopIndex = 0; // ループのインデックス
+
+  function changeText() {
+    // テキストを変更するやつ
+    document.getElementById("changingText").innerText = textArray[loopIndex];
+    
+    // ループのインデックスを更新
+    loopIndex = (loopIndex + 1) % textArray.length;
+  }
+
+  // 一秒ごとにchangeText関数を呼び出すくん
+  setInterval(changeText, 1000);
+</script>
         </div>
     </body>
 </html>
